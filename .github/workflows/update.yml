@@ -15,5 +15,5 @@ jobs:
           architecture: "x64" # optional x64 or x86. Defaults to x64 if not specified
       # - run: sudo apt update
       # - run: sudo apt install gcc
-      - run: pip install  numpy pandas json
+      - run: pip install  numpy pandas
       - run: python main.py
