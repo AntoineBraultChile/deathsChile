@@ -25,7 +25,7 @@ for r in region:
     deathsRByYears = pd.pivot_table(deathsR, index=deathsR.date.dt.strftime('%m-%d'), columns=deathsR.date.dt.year, values='deaths')
     deathsRByYearsFrom2015 = deathsRByYears.iloc[:,5:].reset_index()        
     for y in years:
-        outputR[r][y] ={'labels': (str(y)+'-'+deathsRByYearsFrom2015['date']).values.tolist(), 'values':deathsRByYearsFrom2015[y].values.tolist()}
+        outputR[r][y] ={'labels': (str(y)+'-'+deathsRByYearsFrom2015['date']).values.tolist(), 'values':deathsRByYearsFrom2015[y].values.astype(str).tolist()}
 
 with open('output/deathsRegionsFrom2015.json', 'w') as json_file:
     json.dump(outputR, json_file)
