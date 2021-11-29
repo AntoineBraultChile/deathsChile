@@ -44,8 +44,8 @@ for r in region:
 
 os.mkdir('output')
 
-with open('output/deathsRegionsFrom2015.json', 'w') as json_file:
-    json.dump(outputR, json_file)
+# with open('output/deathsRegionsFrom2015.json', 'w') as json_file:
+#     json.dump(outputR, json_file)
 
 deisComunaConfirmed = pd.read_csv(
     'https://raw.githubusercontent.com/MinCiencia/Datos-COVID19/master/output/producto50/DefuncionesDEIS_confirmadosPorComuna.csv')
