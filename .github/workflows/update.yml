@@ -16,4 +16,4 @@ jobs:
       # - run: sudo apt update
       # - run: sudo apt install gcc
       - run: pip install  numpy pandas
-      - run: python main.py
+      - run: sudo python main.py
