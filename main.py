@@ -1,6 +1,6 @@
 import numpy as np
 import pandas as pd
-
+import os
 import json
 
 data = pd.read_csv(
@@ -41,6 +41,8 @@ for r in region:
     for y in years:
         outputR[r][y] = {'labels': (str(y)+'-'+deathsRByYearsFrom2015['date']).values.tolist(
         ), 'values': deathsRByYearsFrom2015[y].values.astype(str).tolist()}
+
+os.mkdir('output')
 
 with open('output/deathsRegionsFrom2015.json', 'w') as json_file:
     json.dump(outputR, json_file)
