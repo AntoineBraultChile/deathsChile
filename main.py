@@ -53,8 +53,8 @@ deisComunaSuspected = pd.read_csv(
     'https://raw.githubusercontent.com/MinCiencia/Datos-COVID19/master/output/producto50/DefuncionesDEIS_sospechososPorComuna.csv')
 deisRegionSuspected = deisComunaSuspected.groupby('Region').sum().iloc[:, 3:]
 
-deisRegionConfirmed.to_csv('deisRegionConfirmedDeaths.csv')
-deisRegionSuspected.to_csv('deisRegionSuspectedDeaths.csv')
+deisRegionConfirmed.to_csv('output/deisRegionConfirmedDeaths.csv')
+deisRegionSuspected.to_csv('output/deisRegionSuspectedDeaths.csv')
 
 # print(deisRegionConfirmed)
 # print(deisRegionSuspected)
