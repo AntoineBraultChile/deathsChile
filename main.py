@@ -18,6 +18,9 @@ deathsByYears = pd.pivot_table(deathsChile, index=deathsChile.date.dt.strftime(
     '%m-%d'), columns=deathsChile.date.dt.year, values='deaths')
 deathsByYearsFrom2015 = deathsByYears.iloc[:, 5:].reset_index()
 
+# fill Febrary 29
+deathsByYearsFrom2015.loc[deathsByYearsFrom2015['date'] == '02-29', [2015, 2016, 2017, 2018, 2019, 2020, 2021, 2022]] = deathsByYearsFrom2015.loc[deathsByYearsFrom2015['date'] == '02-28', [2015, 2016, 2017, 2018, 2019, 2020, 2021, 2022]].values
+
 output = {'Chile': {}}
 for y in years:
     output['Chile'][y] = {'labels': (str(y)+'-'+deathsByYearsFrom2015['date']).values.tolist(
